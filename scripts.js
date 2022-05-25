@@ -46,4 +46,24 @@ greenSelected.addEventListener('click', () => {
 
 });
 
+const color = document.querySelectorAll('.color');
+color[0].style.background = black;
+color[1].style.background = green;
+color[2].style.background = yellow;
+color[3].style.background = blue;
+
+function preencherPixel(e) {
+  let corSelecionada;
+  for (let i = 0; i < color.length; i += 1) {
+    if (color[i].className === 'color-selected') {
+      corSelecionada = color[i].style.background;
+      e.target.style.background = corSelecionada;
+    }
+  }
+}
+
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', preencherPixel);
+}
+
 window.addEventListener('load', loadPage);
