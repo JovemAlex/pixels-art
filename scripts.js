@@ -1,4 +1,4 @@
-
+const pixels = document.querySelectorAll('.pixel');
 const pixelBoard = document.querySelector('#pixel-board');
 const white = 'white';
 const black = 'black';
@@ -61,9 +61,18 @@ function preencherPixel(e) {
     }
   }
 }
-const pixels = document.querySelectorAll('.pixel');
+// const pixels = document.querySelectorAll('.pixel');
 for (let i = 0; i < pixels.length; i += 1) {
   pixels[i].addEventListener('click', preencherPixel);
 }
 
+const botao = document.querySelector('#clear-board');
+function clear() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    if (pixels[i].style.background !== 'white') {
+      pixels[i].style.background = 'white';
+    }
+  }
+}
+botao.addEventListener('click', clear);
 window.addEventListener('load', loadPage);
