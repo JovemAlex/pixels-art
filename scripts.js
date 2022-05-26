@@ -1,4 +1,4 @@
-const pixels = document.querySelectorAll('.pixel');
+
 const pixelBoard = document.querySelector('#pixel-board');
 const white = 'white';
 const black = 'black';
@@ -55,13 +55,13 @@ color[3].style.background = blue;
 function preencherPixel(e) {
   let corSelecionada;
   for (let i = 0; i < color.length; i += 1) {
-    if (color[i].className === 'color-selected') {
+    if (color[i].className === 'color selected') {
       corSelecionada = color[i].style.background;
       e.target.style.background = corSelecionada;
     }
   }
 }
-
+const pixels = document.querySelectorAll('.pixel');
 for (let i = 0; i < pixels.length; i += 1) {
   pixels[i].addEventListener('click', preencherPixel);
 }
